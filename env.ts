@@ -3,11 +3,14 @@ import { z } from "zod";
 
 export const env = createEnv({
   server: {
+    URL: z.string().url().min(1),
     CHAPTER_MEETINGS_ID: z.string().min(1),
     BOARD_MEETINGS_ID: z.string().min(1),
     DRIVE_CREDENTIALS_BASE64: z.string().base64().min(1),
     STATUTES_URL_EN: z.string().url().min(1),
     STATUTES_URL_SV: z.string().url().min(1),
+    MEMO_API_URL: z.string().url().min(1),
+    BYLAWS_RAW_URL: z.string().url().min(1),
     RECEPTION_BASE_URL: z.string().url().min(1),
     QMISK_BASE_URL: z.string().url().min(1),
     ITK_BASE_URL: z.string().url().min(1),
@@ -17,11 +20,14 @@ export const env = createEnv({
   },
   // If you're using Next.js < 13.4.4, you'll need to specify the runtimeEnv manually
   runtimeEnv: {
+    URL: process.env.URL,
     CHAPTER_MEETINGS_ID: process.env.CHAPTER_MEETINGS_ID,
     BOARD_MEETINGS_ID: process.env.BOARD_MEETINGS_ID,
     DRIVE_CREDENTIALS_BASE64: process.env.DRIVE_CREDENTIALS_BASE64,
     STATUTES_URL_EN: process.env.STATUTES_URL_EN,
     STATUTES_URL_SV: process.env.STATUTES_URL_SV,
+    MEMO_API_URL: process.env.MEMO_API_URL,
+    BYLAWS_RAW_URL: process.env.BYLAWS_RAW_URL,
     RECEPTION_BASE_URL: process.env.RECEPTION_BASE_URL,
     QMISK_BASE_URL: process.env.QMISK_BASE_URL,
     ITK_BASE_URL: process.env.ITK_BASE_URL,
