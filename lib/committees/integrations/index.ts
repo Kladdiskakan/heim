@@ -21,7 +21,6 @@ export const committeeIntegrations: Partial<
   itk: itkIntegration,
   reception: receptionIntegration,
   brc: brcIntegration,
-  //reception: receptionIntegration,
 };
 
 export const committeeIntegrationSlugs = Object.keys(
